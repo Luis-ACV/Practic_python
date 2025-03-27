@@ -10,8 +10,30 @@ this is a exersize for the practis lenguage python whit logict programing
 
 """
 
-print("************Welcome fizz buzz************")
+print("************Welcome FiZZ BuZZ************")
 
-for index in range(10) :
-    if (index % 3 ) == 0 :
-        print("fizz")
+for index in range(1, 101) :
+
+    es_multiplo_tres = index % 3 == 0
+    es_multiplo_cinco = index % 5 == 0
+
+    if es_multiplo_tres and es_multiplo_cinco :
+        print('FiZZ-BUZZ')
+    elif es_multiplo_tres:
+        print("FiZZ")
+    elif es_multiplo_cinco:
+        print("BuZZ")
+    else:
+        print(index)
+
+
+print("************End FiZZ BuZZ************")
+
+# Otra forma de hacerlo mas corto y legible
+for index in range(1, 101) :
+    output = ''
+    if index % 3 == 0:
+        output += 'FiZZ'
+    if index % 5 == 0:
+        output += 'BuZZ'
+    print( output if output else index)
